@@ -70,8 +70,5 @@ class PortfolioHomePage_Controller extends PortfolioPage_Controller
         parent::init();
     }
 
-    public function getCommunity()
-    {
-        return PortfolioCommunity::get();
-    }
+
 }

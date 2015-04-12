@@ -4,3 +4,6 @@ Name: portfolio-core
 SiteConfig:
   extensions:
     - PortfolioSiteConfig
+Page:
+  extensions:
+    - PortfolioGlobalControllerExtension

@@ -8,16 +8,16 @@
  */
 class PortfolioEnterpriseHolder extends PortfolioPage
 {
-    private static $singular_name = "[Portfolio] PortfolioEnterpriseHolder holder";
+    private static $singular_name = "[Portfolio] Enterprise holder";
 
-    private static $plural_name = "[Portfolio] PortfolioEnterpriseHolder holders";
+    private static $plural_name = "[Portfolio] Enterprise holders";
 
-    private static $description = "Holder for Software written in the workplace";
+    private static $description = "Holder for projects completed for current employer";
 
     private static $can_be_root = true;
 
     private static $allowed_children = array(
-        "PortfolioCommunity"
+        "PortfolioEnterprise"
     );
 
     private static $icon = 'portfolio-core/images/icons/sitetree_images/holder.png';
