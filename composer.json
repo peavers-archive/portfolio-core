@@ -1,0 +1,11 @@
+{
+  "name": "moe/portfolio-core",
+  "description": "Base components for portfolio website",
+  "type": "silverstripe-module",
+  "authors": [
+    {
+      "name": "Chris Turner",
+      "email": "peavers@gmail.com"
+    }
+  ]
+}
