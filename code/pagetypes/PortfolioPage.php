@@ -11,6 +11,8 @@ class PortfolioPage extends Page
 
     private static $description = "Generic content page type";
 
+    private static $icon = 'portfolio-core/images/icons/sitetree_images/page.png';
+
     private static $db = array(
         'MakeButton' => 'Boolean(1)'
     );

@@ -18,17 +18,17 @@ class PortfolioHomePage extends PortfolioPage
     private static $icon = 'portfolio-core/images/icons/sitetree_images/home.png';
 
     private static $db = array(
-        'PrimaryMessage' => 'HTMLText',
-        'PrimaryLeftColumn' => 'HTMLText',
+        'PrimaryMessage'     => 'HTMLText',
+        'PrimaryLeftColumn'  => 'HTMLText',
         'PrimaryRightColumn' => 'HTMLText',
-        'ProjectName' => 'Varchar',
-        'ProjectLeftColumn' => 'HTMLText',
+        'ProjectName'        => 'Varchar',
+        'ProjectLeftColumn'  => 'HTMLText',
         'ProjectRightColumn' => 'HTMLText',
-        'ProjectButtonInfo' => 'HTMLText',
+        'ProjectButtonInfo'  => 'HTMLText',
     );
 
     private static $has_one = array(
-        "ProjectImage" => "Image",
+        "ProjectImage"         => "Image",
         'EnterpriseHolderLink' => 'SiteTree',
     );
 
@@ -43,13 +43,15 @@ class PortfolioHomePage extends PortfolioPage
         ));
 
         $fields->addFieldsToTab('Root.LatestProject', array(
-            TextField::create('ProjectName', "Project name/title"),
+
             UploadField::create('ProjectImage', "Cover image"),
+
+            TextField::create('ProjectName', "Project name/title"),
+            TreeDropdownField::create("EnterpriseHolderLinkID", "Link to enterprise project holder", 'SiteTree'),
+
             HtmlEditorField::create("ProjectLeftColumn", "Left column")->setRows(2),
             HtmlEditorField::create("ProjectRightColumn", "Right column")->setRows(2),
-
-            TreeDropdownField::create("EnterpriseHolderLinkID", "Link to enterprise project holder", 'SiteTree'),
-            HtmlEditorField::create("ProjectButtonInfo", "Button information")->setRows(2),
+            HtmlEditorField::create("ProjectButtonInfo", "Bottom column")->setRows(2),
 
         ));
 

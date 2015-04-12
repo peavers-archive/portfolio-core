@@ -20,11 +20,15 @@ class PortfolioCommunity extends PortfolioPage
 
     private static $db = array(
         'GitHubRepository' => 'Varchar',
-        'Description' => 'Text',
+        'Description'      => 'Text',
     );
 
     private static $has_one = array(
         'Screen' => 'Image'
+    );
+
+    private static $has_many = array(
+        'PortfolioCommunityFeature' => 'PortfolioCommunityFeature'
     );
 
     public function getCMSFields()
@@ -36,6 +40,11 @@ class PortfolioCommunity extends PortfolioPage
             TextareaField::create("Description", "Short description shown on homepage"),
             UploadField::create("Screen", "Icon/Image of product"),
         ), "Content");
+
+        $fields->addFieldsToTab("Root.Features", array(
+                GridField::create('PortfolioCommunityFeature', 'Features of this release', $this->PortfolioCommunityFeature(), GridFieldConfig_RecordEditor::create()),
+            )
+        );
 
         return $fields;
     }
