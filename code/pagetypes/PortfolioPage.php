@@ -44,7 +44,7 @@ class PortfolioPage_Controller extends Page_Controller
 
         $styles = $this->getBaseStyles();
         Requirements::combine_files('styles.css', $styles['all']);
-        Requirements::set_combined_files_folder(ASSETS_DIR . '/_combinedfiles/peavers-' . SSViewer::current_theme());
+        Requirements::set_combined_files_folder(ASSETS_DIR . '/_combinedfiles/portfolio-' . SSViewer::current_theme());
     }
 
     /**
