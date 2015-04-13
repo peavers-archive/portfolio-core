@@ -1,8 +1,7 @@
 <?php
 
 /**
- * Class ${NAME}
- * @package: portfolio-core
+ * Class PortfolioCommunityFeature
  */
 class PortfolioCommunityFeature extends DataObject
 {

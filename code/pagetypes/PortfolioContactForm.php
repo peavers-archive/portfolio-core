@@ -1,5 +1,8 @@
 <?
 
+/**
+ * Class PortfolioContactForm
+ */
 class PortfolioContactForm extends PortfolioPage
 {
     private static $singular_name = "[Portfolio] Contact page";
@@ -11,6 +14,9 @@ class PortfolioContactForm extends PortfolioPage
     private static $icon = 'portfolio-core/images/icons/sitetree_images/page.png';
 }
 
+/**
+ * Class PortfolioContactForm_Controller
+ */
 class PortfolioContactForm_Controller extends PortfolioPage_Controller
 {
     public static $allowed_actions = array(

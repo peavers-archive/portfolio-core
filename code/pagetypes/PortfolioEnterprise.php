@@ -17,6 +17,9 @@ class PortfolioEnterprise extends PortfolioPage
 
 }
 
+/**
+ * Class PortfolioEnterprise_Controller
+ */
 class PortfolioEnterprise_Controller extends PortfolioPage_Controller
 {
 

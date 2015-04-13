@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Chris
- * Date: 4/12/2015
- * Time: 10:11 AM
+ * Class PortfolioCommunity
  */
 class PortfolioCommunity extends PortfolioPage
 {

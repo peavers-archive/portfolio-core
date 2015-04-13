@@ -1,5 +1,8 @@
 <?
 
+/**
+ * Class PortfolioGlobalControllerExtension
+ */
 class PortfolioGlobalControllerExtension extends DataExtension
 {
 

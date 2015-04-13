@@ -1,10 +1,7 @@
 <?php
 
 /**
- * Created by PhpStorm.
- * User: Chris
- * Date: 4/12/2015
- * Time: 10:17 AM
+ * Class PortfolioCommunityHolder
  */
 class PortfolioCommunityHolder extends PortfolioPage
 {
@@ -24,6 +21,9 @@ class PortfolioCommunityHolder extends PortfolioPage
 
 }
 
+/**
+ * Class PortfolioCommunityHolder_Controller
+ */
 class PortfolioCommunityHolder_Controller extends PortfolioPage_Controller
 {
 

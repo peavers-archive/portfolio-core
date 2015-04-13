@@ -1,11 +1,13 @@
 <?php
 
 /**
- * Class BaseNameSiteConfig
+ * Class PortfolioSiteConfig
  */
 class PortfolioSiteConfig extends DataExtension
 {
-    private static $db = array();
+    private static $db = array(
+        'BottomLine' => 'Varchar'
+    );
 
     private static $has_many = array(
         "PortfolioFooterLinks" => "PortfolioFooterLinks"
@@ -23,6 +25,7 @@ class PortfolioSiteConfig extends DataExtension
 
         $fields->addFieldsToTab('Root.FooterLinks', array(
             GridField::create('PortfolioFooterLinks', 'Links in the footer', $this->owner->PortfolioFooterLinks(), GridFieldConfig_RecordEditor::create()),
+            TextField::create('BottomLine', 'Bottom line of the footer'),
         ));
 
     }
