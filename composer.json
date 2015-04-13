@@ -1,5 +1,5 @@
 {
-  "name": "moe/portfolio-core",
+  "name": "forloop/portfolio-core",
   "description": "Base components for portfolio website",
   "type": "silverstripe-module",
   "authors": [
