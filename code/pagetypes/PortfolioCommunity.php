@@ -19,12 +19,14 @@ class PortfolioCommunity extends PortfolioPage
     private static $allowed_children = array();
 
     private static $db = array(
-        'GitHubRepository' => 'Varchar',
-        'Description'      => 'Text',
+        'DisplayOnHomepage' => 'Boolean(1)',
+        'GitHubRepository'  => 'Varchar',
+        'Description'       => 'Text',
     );
 
     private static $has_one = array(
-        'Screen' => 'Image'
+        'Logo'   => 'Image',
+        'Screen' => 'Image',
     );
 
     private static $has_many = array(
@@ -36,9 +38,11 @@ class PortfolioCommunity extends PortfolioPage
         $fields = parent::getCMSFields();
 
         $fields->addFieldsToTab('Root.Main', array(
+            CheckboxField::create('DisplayOnHomepage', 'Display this on the homepage'),
             TextField::create("GitHubRepository", "Link to github repository"),
             TextareaField::create("Description", "Short description shown on homepage"),
-            UploadField::create("Screen", "Icon/Image of product"),
+            UploadField::create("Logo", "Logo for project"),
+            UploadField::create("Screen", "Screen shot of project"),
         ), "Content");
 
         $fields->addFieldsToTab("Root.Features", array(

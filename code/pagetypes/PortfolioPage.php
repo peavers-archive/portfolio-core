@@ -60,7 +60,7 @@ class PortfolioPage_Controller extends Page_Controller
 
         $js_array = array(
             "$themeDir/js/lib/jquery.min.js",
-            "$themeDir/js/lib/owl.carousel.min.js",
+            "$themeDir/js/lib/jquery.slicknav.js",
             "$themeDir/js/functions.js",
         );
 
@@ -77,13 +77,13 @@ class PortfolioPage_Controller extends Page_Controller
         $themeDir = SSViewer::get_theme_folder();
 
         return array(
-            'all' => array(
+            'all'    => array(
                 "$themeDir/css/style.css",
             ),
             'screen' => array(
                 'screen.css'
             ),
-            'print' => array(
+            'print'  => array(
                 'print.css'
             )
         );
