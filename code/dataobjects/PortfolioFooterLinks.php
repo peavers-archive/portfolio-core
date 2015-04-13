@@ -30,9 +30,7 @@ class PortfolioFooterLinks extends DataObject
                         'PhoneNumber'  => 'Phone/Skype number',
                         'EmailAddress' => 'Email address',
                     )),
-
                 HiddenField::create("Output", "Output"),
-
             )
         );
 
@@ -41,6 +39,10 @@ class PortfolioFooterLinks extends DataObject
         return $fields;
     }
 
+    /**
+     * Very messy implementation - needs to be rewritten
+     * @TODO Rewrite this mess
+     */
     public function onBeforeWrite()
     {
 
@@ -65,5 +67,4 @@ class PortfolioFooterLinks extends DataObject
 
         parent::onBeforeWrite();
     }
-
 }

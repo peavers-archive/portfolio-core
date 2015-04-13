@@ -49,6 +49,11 @@ class PortfolioGlobalControllerExtension extends DataExtension
         return PortfolioFooterLinks::get();
     }
 
+    /**
+     * Sets the success or failure message for the form submission. Could probably simplify this a bit
+     *
+     * @return ArrayData|bool
+     */
     function statusMessage()
     {
         if (Session::get('ActionMessage')) {
@@ -58,7 +63,10 @@ class PortfolioGlobalControllerExtension extends DataExtension
             Session::clear('ActionStatus');
             Session::clear('ActionMessage');
 
-            return new ArrayData(array('Message' => $message, 'Status' => $status));
+            return new ArrayData(array(
+                'Message' => $message,
+                'Status'  => $status
+            ));
         }
 
         return false;
