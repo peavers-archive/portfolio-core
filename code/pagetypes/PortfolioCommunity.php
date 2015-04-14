@@ -17,7 +17,7 @@ class PortfolioCommunity extends PortfolioPage
 
     private static $db = array(
         'DisplayOnHomepage' => 'Boolean(1)',
-        'GitHubRepository'  => 'Varchar',
+        'GitHubRepository'  => 'Text',
         'Description'       => 'Text',
     );
 
@@ -36,7 +36,7 @@ class PortfolioCommunity extends PortfolioPage
 
         $fields->addFieldsToTab('Root.Main', array(
             CheckboxField::create('DisplayOnHomepage', 'Display this on the homepage'),
-            TextField::create("GitHubRepository", "Link to github repository"),
+            TextField::create("GitHubRepository", "Link to repository"),
             TextareaField::create("Description", "Short description shown on homepage"),
             UploadField::create("Logo", "Logo for project"),
             UploadField::create("Screen", "Screen shot of project"),
