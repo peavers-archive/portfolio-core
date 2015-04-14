@@ -38,8 +38,8 @@ class PortfolioCommunity extends PortfolioPage
             CheckboxField::create('DisplayOnHomepage', 'Display this on the homepage'),
             TextField::create("GitHubRepository", "Link to repository"),
             TextareaField::create("Description", "Short description shown on homepage"),
-            UploadField::create("Logo", "Logo for project"),
-            UploadField::create("Screen", "Screen shot of project"),
+            UploadField::create("Logo", "Logo for project")->setFolderName('Uploads/Icons/'),
+            UploadField::create("Screen", "Screen shot of project")->setFolderName('Uploads/Screenshots/'),
         ), "Content");
 
         $fields->addFieldsToTab("Root.Features", array(

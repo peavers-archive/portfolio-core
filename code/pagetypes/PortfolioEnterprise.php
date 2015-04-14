@@ -35,7 +35,7 @@ class PortfolioEnterprise extends PortfolioPage
                 ->setSource(array(true => "Yes", false => "No"))
                 ->setDescription("<strong>Note:</strong> Only one project can be set as the homepage project at a time"),
 
-            UploadField::create('ProjectImage', "Cover image"),
+            UploadField::create('ProjectImage', "Cover image")->setFolderName('Uploads/Screenshots/'),
             HtmlEditorField::create("ProjectLeftColumn", "Left column")->setRows(2),
             HtmlEditorField::create("ProjectRightColumn", "Right column")->setRows(2),
             HtmlEditorField::create("ProjectButtonInfo", "Bottom column")->setRows(2),
