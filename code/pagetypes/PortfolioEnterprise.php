@@ -32,7 +32,7 @@ class PortfolioEnterprise extends PortfolioPage
 
         $fields->addFieldsToTab('Root.HomepageDetails', array(
             DropdownField::create('DisplayOnHomepage', 'Display this on the homepage')
-                ->setSource(array(0 => "Yes", 1 => "No"))
+                ->setSource(array(true => "Yes", false => "No"))
                 ->setDescription("<strong>Note:</strong> Only one project can be set as the homepage project at a time"),
 
             UploadField::create('ProjectImage', "Cover image"),
@@ -42,6 +42,30 @@ class PortfolioEnterprise extends PortfolioPage
         ));
 
         return $fields;
+    }
+
+    /**
+     * An over complicated way to make sure only one project is set to display on the homepage at a time.
+     */
+    public function onBeforeWrite()
+    {
+
+        parent::onBeforeWrite();
+
+        if ($this->DisplayOnHomepage == false) {
+            return;
+        }
+
+        if (!DataObject::get($this->ClassName)) {
+            return;
+        }
+
+        foreach (DataObject::get($this->ClassName) as $item) {
+            if ($item->ID != $this->ID) {
+                $item->DisplayOnHomepage = false;
+                $item->write();
+            }
+        }
     }
 
 }

@@ -16,6 +16,7 @@ class FontAwesomeField extends DropdownField
         parent::__construct($name, $title, $source, $value, $form, $emptyString);
 
         $this->setSource(FontAwesome::getIcons());
+        $this->setTitle("Font Awesome icon");
         $this->setDescription('<a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">List of icons available here</a>');
     }
 }

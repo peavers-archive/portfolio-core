@@ -23,7 +23,7 @@ class PortfolioGlobalControllerExtension extends DataExtension
      */
     public function getCommunity()
     {
-        return PortfolioCommunity::get()->sort(array("Created" => "DESC"));
+        return PortfolioCommunity::get()->sort(array("Title" => "ASC"));
     }
 
     /**
@@ -44,10 +44,7 @@ class PortfolioGlobalControllerExtension extends DataExtension
      */
     public function getHomepageEnterprise()
     {
-        return PortfolioEnterprise::get()
-            ->filter(array("DisplayOnHomepage" => 0))
-            ->sort(array("Title" => "ASC"))
-            ->limit(1);
+        return PortfolioEnterprise::get()->filter(array("DisplayOnHomepage" => true));
     }
 
     /**

@@ -10,7 +10,7 @@ class PortfolioFooterLinks extends DataObject
         'Icon'        => 'Varchar',
         'LinkAddress' => 'Varchar',
         'Type'        => 'Varchar',
-        'Output'      => 'HTMLText',
+        'LinkType' => 'Varchar',
     );
 
     private static $has_one = array(
@@ -23,6 +23,13 @@ class PortfolioFooterLinks extends DataObject
 
         $fields->addFieldsToTab("Root.Main", array(
 
+                TextField::Create("Title", "Label"),
+
+                TextField::Create("LinkAddress", "Link")
+                    ->setDescription("Can be email address, internal/external url or phone number"),
+
+                FontAwesomeField::create("Icon"),
+
                 OptionsetField::create('Type', 'Link type')
                     ->setSource(array(
                         'Internal'     => 'To another page on this site',
@@ -30,7 +37,7 @@ class PortfolioFooterLinks extends DataObject
                         'PhoneNumber'  => 'Phone/Skype number',
                         'EmailAddress' => 'Email address',
                     )),
-                HiddenField::create("Output", "Output"),
+                HiddenField::create("LinkType", "LinkType"),
             )
         );
 
@@ -40,29 +47,20 @@ class PortfolioFooterLinks extends DataObject
     }
 
     /**
-     * Very messy implementation - needs to be rewritten
-     * @TODO Rewrite this mess
+     * Prefix the link based on user selection
      */
     public function onBeforeWrite()
     {
 
-        $icon = '<i class="fa fa-' . $this->Icon . '"></i>';
-
         switch ($this->Type) {
-            case 'Internal':
-                $this->Output = $icon . '<a href="' . $this->LinkAddress . '">' . $this->Title . '</a>';
-                break;
-            case 'External':
-                $this->Output = $icon . '<a href="' . $this->LinkAddress . '">' . $this->Title . '</a>';
-                break;
             case 'PhoneNumber':
-                $this->Output = $icon . '<a href="tel:' . $this->LinkAddress . '">' . $this->Title . '</a>';
+                $this->LinkType = "tel:";
                 break;
             case 'EmailAddress':
-                $this->Output = $icon . '<a href="mailto:' . $this->LinkAddress . '">' . $this->Title . '</a>';
+                $this->LinkType = "mailto:";
                 break;
             default:
-                $this->Output = "Error!";
+                $this->LinkType = "";
         }
 
         parent::onBeforeWrite();
