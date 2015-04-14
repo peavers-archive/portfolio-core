@@ -17,12 +17,18 @@ class PortfolioPage extends Page
         'MakeButton' => 'Boolean(1)'
     );
 
-    public function getCMSFields()
+    private static $defaults = array(
+        'MakeButton' => 0,
+    );
+
+    public function getSettingsFields()
     {
-        $fields = parent::getCMSFields();
-        $fields->addFieldsToTab('Root.Main', array(
-            CheckboxField::create('MakeButton', 'Display link to this page as a button?')
-        ), "Content");
+        $fields = parent::getSettingsFields();
+
+        $fields->addFieldsToTab("Root.Settings", array(
+            CheckboxField::create('MakeButton', 'Display link to this page as a button?', 0)
+        ));
+
         return $fields;
     }
 }
