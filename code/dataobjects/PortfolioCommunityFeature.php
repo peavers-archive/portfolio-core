@@ -14,4 +14,16 @@ class PortfolioCommunityFeature extends DataObject
     private static $has_one = array(
         'PortfolioCommunity' => 'PortfolioCommunity'
     );
+
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
+
+        $fields->addFieldsToTab('Root.Main', array(
+            FontAwesomeField::create("Icon", "Font Awesome icon")
+        ));
+
+        return $fields;
+    }
+
 }

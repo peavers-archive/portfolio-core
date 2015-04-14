@@ -12,6 +12,16 @@ class PortfolioContactForm extends PortfolioPage
     private static $description = "Basic contact form";
 
     private static $icon = 'portfolio-core/images/icons/sitetree_images/page.png';
+
+    private static $db = array();
+
+    public function getCMSFields()
+    {
+        $fields = parent::getCMSFields();
+
+        return $fields;
+    }
+
 }
 
 /**

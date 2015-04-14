@@ -40,6 +40,16 @@ class PortfolioGlobalControllerExtension extends DataExtension
     }
 
     /**
+     * @return mixed
+     */
+    public function getHomepageEnterprise()
+    {
+        return PortfolioEnterprise::get()
+            ->filter(array("DisplayOnHomepage" => true))
+            ->limit(1);
+    }
+
+    /**
      * Get contact links for the footer
      *
      * @return mixed

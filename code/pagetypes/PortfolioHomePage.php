@@ -21,15 +21,6 @@ class PortfolioHomePage extends PortfolioPage
         'PrimaryMessage'     => 'HTMLText',
         'PrimaryLeftColumn'  => 'HTMLText',
         'PrimaryRightColumn' => 'HTMLText',
-        'ProjectName'        => 'Varchar',
-        'ProjectLeftColumn'  => 'HTMLText',
-        'ProjectRightColumn' => 'HTMLText',
-        'ProjectButtonInfo'  => 'HTMLText',
-    );
-
-    private static $has_one = array(
-        "ProjectImage"         => "Image",
-        'EnterpriseHolderLink' => 'SiteTree',
     );
 
     public function getCMSFields()
@@ -37,22 +28,9 @@ class PortfolioHomePage extends PortfolioPage
         $fields = parent::getCMSFields();
 
         $fields->addFieldsToTab('Root.Intro', array(
-            HtmlEditorField::create("PrimaryMessage", "Primary message")->setRows(2),
+            HtmlEditorField::create("PrimaryMessage", "Primary message")->setRows(2)->setDescription("This should be set as an H1 tag via the editor"),
             HtmlEditorField::create("PrimaryLeftColumn", "Left column")->setRows(2),
             HtmlEditorField::create("PrimaryRightColumn", "Right column")->setRows(2),
-        ));
-
-        $fields->addFieldsToTab('Root.LatestProject', array(
-
-            UploadField::create('ProjectImage', "Cover image"),
-
-            TextField::create('ProjectName', "Project name/title"),
-            TreeDropdownField::create("EnterpriseHolderLinkID", "Link to enterprise project holder", 'SiteTree'),
-
-            HtmlEditorField::create("ProjectLeftColumn", "Left column")->setRows(2),
-            HtmlEditorField::create("ProjectRightColumn", "Right column")->setRows(2),
-            HtmlEditorField::create("ProjectButtonInfo", "Bottom column")->setRows(2),
-
         ));
 
         $fields->removeByName('Metadata');
