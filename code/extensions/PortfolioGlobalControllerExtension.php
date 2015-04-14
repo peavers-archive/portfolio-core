@@ -45,7 +45,8 @@ class PortfolioGlobalControllerExtension extends DataExtension
     public function getHomepageEnterprise()
     {
         return PortfolioEnterprise::get()
-            ->filter(array("DisplayOnHomepage" => true))
+            ->filter(array("DisplayOnHomepage" => 0))
+            ->sort(array("Title" => "ASC"))
             ->limit(1);
     }
 
