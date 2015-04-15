@@ -35,17 +35,16 @@ class PortfolioContactForm_Controller extends PortfolioPage_Controller
         return Form::create($this, 'contactForm',
 
             FieldList::create(
-                TextField::create('Name', 'Name'),
-                EmailField::create('EmailAddress', 'Your email address'),
-                TextField::create('Subject', 'Subject'),
-                TextareaField::create('Enquiry', 'Enquiry')
+                TextField::create('Name', 'Who are you?'),
+                TextField::create('EmailAddress', 'How should I respond to you?'),
+                TextField::create('Subject', 'What is this about?'),
+                TextareaField::create('Enquiry', 'Go for it!')
             ),
 
             FieldList::create(
                 FormAction::create('submitForm', "Submit")
             ),
-            null
-//            RequiredFields::create('Name', 'EmailAddress', 'Subject', 'Enquiry')
+            RequiredFields::create('Name', 'Subject', 'Enquiry')
         );
     }
 
