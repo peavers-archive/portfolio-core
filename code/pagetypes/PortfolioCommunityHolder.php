@@ -26,5 +26,14 @@ class PortfolioCommunityHolder extends PortfolioPage
  */
 class PortfolioCommunityHolder_Controller extends PortfolioPage_Controller
 {
+    public function init()
+    {
+        parent::init();
+    }
+
+    public function getPortfolioLanguageTag()
+    {
+        return PortfolioLanguageTag::get()->sort('Title', 'ASC');
+    }
 
 }

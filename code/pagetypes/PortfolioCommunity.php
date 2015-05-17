@@ -19,6 +19,7 @@ class PortfolioCommunity extends PortfolioPage
         'DisplayOnHomepage' => 'Boolean(1)',
         'GitHubRepository'  => 'Text',
         'Description'       => 'Text',
+        'LanguageType' => 'Varchar'
     );
 
     private static $has_one = array(
@@ -28,6 +29,10 @@ class PortfolioCommunity extends PortfolioPage
 
     private static $has_many = array(
         'PortfolioCommunityFeature' => 'PortfolioCommunityFeature'
+    );
+
+    private static $many_many = array(
+        'PortfolioLanguageTag' => 'PortfolioLanguageTag',
     );
 
     public function getCMSFields()
@@ -47,14 +52,43 @@ class PortfolioCommunity extends PortfolioPage
             )
         );
 
+        $fields->addFieldsToTab("Root.LanguageTags", array(
+                GridField::create('PortfolioLanguageTag', 'Language tag', $this->PortfolioLanguageTag(), GridFieldConfig_RelationEditor::create()),
+            )
+        );
+
         return $fields;
     }
+
+
+    public function getTestTag()
+    {
+
+        $arrayList = new ArrayList();
+
+        foreach ($this->PortfolioLanguageTag() as $object) {
+            $arrayList->add($object);
+        }
+
+        return $arrayList;
+
+    }
+
 }
 
+/**
+ * Class PortfolioCommunity_Controller
+ */
 class PortfolioCommunity_Controller extends PortfolioPage_Controller
 {
     public function init()
     {
         parent::init();
     }
+
+    public function getTestTag()
+    {
+        return "Hello";
+    }
+
 }

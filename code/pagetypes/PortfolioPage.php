@@ -67,6 +67,7 @@ class PortfolioPage_Controller extends Page_Controller
         $js_array = array(
             "$themeDir/js/lib/jquery.min.js",
             "$themeDir/js/lib/jquery.slicknav.js",
+            "$themeDir/js/lib/jquery.mixitup.min.js",
             "$themeDir/js/functions.js",
         );
 
