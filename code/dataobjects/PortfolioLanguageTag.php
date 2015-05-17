@@ -20,12 +20,9 @@ class PortfolioLanguageTag extends DataObject
 
     public function onBeforeWrite()
     {
-
         $safeTitle = $this->Title;
-
         $safeTitle = urlencode($safeTitle);
         $safeTitle = strtolower($safeTitle);
-
         $this->Title = $safeTitle;
 
         parent::onBeforeWrite();
