@@ -14,6 +14,10 @@ class PortfolioLanguageTag extends DataObject
         'PortfolioCommunity' => 'PortfolioCommunity'
     );
 
+    private static $summary_fields = array(
+        'Label' => 'Tag name'
+    );
+
     public function onBeforeWrite()
     {
 
