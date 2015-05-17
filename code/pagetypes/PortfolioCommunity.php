@@ -61,7 +61,7 @@ class PortfolioCommunity extends PortfolioPage
     }
 
 
-    public function getTestTag()
+    public function getTag()
     {
 
         $arrayList = new ArrayList();
@@ -85,10 +85,4 @@ class PortfolioCommunity_Controller extends PortfolioPage_Controller
     {
         parent::init();
     }
-
-    public function getTestTag()
-    {
-        return "Hello";
-    }
-
 }
