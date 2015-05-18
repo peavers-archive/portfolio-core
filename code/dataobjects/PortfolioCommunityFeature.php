@@ -20,7 +20,7 @@ class PortfolioCommunityFeature extends DataObject
         $fields = parent::getCMSFields();
 
         $fields->addFieldsToTab('Root.Main', array(
-            FAField::create("Icon", 'Font awesome icon'),
+            FontAwesomeField::create("Icon", 'Font awesome icon'),
         ));
 
         return $fields;

@@ -28,7 +28,7 @@ class PortfolioFooterLinks extends DataObject
                 TextField::Create("LinkAddress", "Link")
                     ->setDescription("Can be email address, internal/external url or phone number"),
 
-                FAField::create("Icon", 'Font awesome icon'),
+                FontAwesomeField::create("Icon", 'Font awesome icon'),
 
                 OptionsetField::create('Type', 'Link type')
                     ->setSource(array(
