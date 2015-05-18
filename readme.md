@@ -2,11 +2,11 @@
 Backend for Portfolio build.
 
 ## Requires
-[Portfolio Theme] (https://github.com/peavers/portfolio-theme)
-[Font-Awesome module] (https://github.com/peavers/silverstripe-font-awesome)
+* [Portfolio Theme] (https://github.com/peavers/portfolio-theme)
+* [Font-Awesome module] (https://github.com/peavers/silverstripe-font-awesome)
 
 ## Recommended
-[Google Analytics module] (https://github.com/peavers/silverstripe-google-analytics)
+* [Google Analytics module] (https://github.com/peavers/silverstripe-google-analytics)
 
 ## Features
 * Completely customizable from the CMS
